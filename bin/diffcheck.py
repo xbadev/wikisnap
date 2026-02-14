@@ -1,4 +1,4 @@
-!/usr/bin/env python3
+#!/usr/bin/env python3
 
 """
 diffcheck — detect changes in Wikipedia pages between archived snapshots.
