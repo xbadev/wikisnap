@@ -4,6 +4,10 @@ CLI tool that fetches Wikipedia pages, converts them to clean Markdown, and arch
 
 ---
 
+## Why WikiSnap?
+
+Wikipedia pages change silently, edits happen constantly and there is no easy way to track how an article looked on a specific date. WikiSnap snapshots pages into versioned Markdown archives so you can diff content over time and catch when something you're referencing gets rewritten. Pair it with cron and diffcheck and it runs itself.
+
 ## Quick Start
 
 ```bash
