@@ -24,9 +24,9 @@ chmod +x bin/wikisnap bin/diffcheck
 
 ## How It Works
 
-[`wikisnap`](bin/wikisnap) reads a pipe-delimited file of Wikipedia URLs, fetches each page, extracts the article body using MediaWiki's HTML structure, converts it to Markdown with YAML frontmatter, and bundles everything into a timestamped `.tar.gz` in the output directory.
+[`wikisnap`](bin/wikisnap.py) reads a pipe-delimited file of Wikipedia URLs, fetches each page, extracts the article body using MediaWiki's HTML structure, converts it to Markdown with YAML frontmatter, and bundles everything into a timestamped `.tar.gz` in the output directory.
 
-[`diffcheck`](bin/diffcheck) compares today's archive against one from N days ago and reports which pages have changed — designed to run on a schedule after `wikisnap` to track edits over time.
+[`diffcheck`](bin/diffcheck.py) compares today's archive against one from N days ago and reports which pages have changed — designed to run on a schedule after `wikisnap` to track edits over time.
 
 ```
 urls.psv → wikisnap → archives/2025-02-13_03-30-00.tar.gz
