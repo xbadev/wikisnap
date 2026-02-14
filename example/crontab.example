@@ -1,0 +1,48 @@
+# wikisnap cron examples
+# -----------------------
+# This file shows how to schedule automatic Wikipedia snapshots
+# and periodic change detection using cron.
+#
+# Before using:
+# 1. Update the paths below to match your system.
+# 2. Run: crontab -e
+# 3. Paste the desired job into your crontab.
+#
+# Make sure your virtual environment exists and dependencies are installed:
+#   python3 -m venv ~/wikisnap/.venv
+#   source ~/wikisnap/.venv/bin/activate
+#   pip install -r ~/wikisnap/requirements.txt
+
+
+# ------------------------------------------------------------
+# Example 1: Run wikisnap daily at 02:00 AM
+# ------------------------------------------------------------
+0 2 * * * /home/USER/wikisnap/.venv/bin/python \
+/home/USER/wikisnap/bin/wikisnap \
+-i /home/USER/wikisnap/example/urls.csv \
+-o /home/USER/wikisnap/snapshots >> /home/USER/wikisnap/cron.log 2>&1
+
+
+# ------------------------------------------------------------
+# Example 2: Run diffcheck daily at 02:30 AM (compare with 1 day ago)
+# ------------------------------------------------------------
+30 2 * * * /home/USER/wikisnap/.venv/bin/python \
+/home/USER/wikisnap/bin/diffcheck \
+-o /home/USER/wikisnap/snapshots \
+-n 1 >> /home/USER/wikisnap/cron.log 2>&1
+
+
+# ------------------------------------------------------------
+# Example 3: Weekly snapshot (Sunday at 03:00 AM)
+# ------------------------------------------------------------
+0 3 * * 0 /home/USER/wikisnap/.venv/bin/python \
+/home/USER/wikisnap/bin/wikisnap \
+-i /home/USER/wikisnap/example/urls.csv \
+-o /home/USER/wikisnap/snapshots >> /home/USER/wikisnap/cron.log 2>&1
+
+
+# Notes:
+# - Replace USER with your actual username.
+# - Use full absolute paths (cron does NOT load your shell profile).
+# - Output is appended to cron.log for debugging.
+# - Test manually before enabling in cron.
