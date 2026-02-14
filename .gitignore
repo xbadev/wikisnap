@@ -1,0 +1,19 @@
+# Archives
+*.tar.gz
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+
+# Environments
+.venv/
+env/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
