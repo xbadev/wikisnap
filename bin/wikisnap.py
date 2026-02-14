@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """
 wikisnap — fetch Wikipedia pages, convert to Markdown, and archive.
 
